@@ -10,47 +10,38 @@
  */
 
 var Shoe1 = {
-  name:'Off The Wall',
+  name: "Off The Wall",
   price: 40,
-  maker:'Vans',
+  maker: "Vans",
 }
 var Shoe2 = {
-  name:'AllStar',
+  name: "AllStar",
   price: 80,
-  maker:'Converse',
+  maker: "Converse",
 }
 var Shoe3 = {
-  name:'Techline',
+  name: "Techline",
   price: 120,
-  maker:'Nike',
+  maker:"Nike",
 }
 
-var productList = ['Shoe1', 'Shoe2', 'Shoe3']; //this is an array
+var productList = [Shoe1, Shoe2]; //this is an array
 
 //Your code here
 //Hint: productList.push(newObject) will add the object you just created to the array
-productList.push('Shoe1','Shoe2','Shoe3')
-console.log(productList[0]);
+productList.push(Shoe3);
 
 /* Step 2
  * Iterate (or go through) productList one by one using the for loop
  * and for each product, if the price is below $50, console.log a message like below
  * "The product [name] costs [price], and is a match"
  */
-for(var i = 0; i < productList.length; i++){
 
-    //Your code here
-if('Shoe1'.price > 50){
-  console.log("The number of products below $50 is " + comparePrice(50));}
-
-/*  console.log(productList[i].price)
-  var total = 0;
-for(var i = 0; i < productList.length; i++){
-  total += productList[i].price;
-}*/
-
-    console.log();
-}
+ for(var i = 0; i < productList.length; i++){
+     //Your code here
+     if(productList[i].price < 50)
+       console.log("The product " + (productList[i].name) + " costs " + (productList[i].price) + " and is a match." )
+ };
 
 /* Step 3
  * What is the average price of all the products?
@@ -59,6 +50,15 @@ for(var i = 0; i < productList.length; i++){
 //3.1 first, calculate total price using the for loop again
 
 //3.2 then, divide total price by the number of products, using proudctList.length
+var totalprice = 0
+var avgprice = 0
+
+for(var i = 0; i < productList.length; i++){
+    totalprice = totalprice + productList[i].price;
+
+};
+avgprice = totalprice / productList.length
+console.log("The average price is " + avgprice)
 
 
 /* Step 4
@@ -66,15 +66,18 @@ for(var i = 0; i < productList.length; i++){
  * so that the function returns the number of products below that price
  */
 
-function comparePrice(p){
+var pricecompare50 = 0
+var pricecompare150 = 0
 
-    var numOfMatchingProducts = 0;
+ for(var i = 0; i < productList.length; i++){
+     //Your code here
+    if(productList[i].price < 50)
+      pricecompare50 = pricecompare50 + 1
+    if(productList[i].price < 150)
+      pricecompare150 = pricecompare150 + 1
+ };
+console.log("The number of products below $50 is " + pricecompare50)
+console.log("The number of products below $150 is " + pricecompare150)
 
-    //Your code here
-
-    return numOfMatchingProducts;
-}
 
 //
-console.log("The number of products below $10 is " + comparePrice(10));
-console.log("The number of products below $50 is " + comparePrice(50));
