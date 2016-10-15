@@ -9,11 +9,27 @@
  * and add them to the "productList" array using array.push()
  */
 
-var productList = []; //this is an array
+var Shoe1 = {
+  name:'Off The Wall',
+  price: 40,
+  maker:'Vans',
+}
+var Shoe2 = {
+  name:'AllStar',
+  price: 80,
+  maker:'Converse',
+}
+var Shoe3 = {
+  name:'Techline',
+  price: 120,
+  maker:'Nike',
+}
+
+var productList = ['Shoe1', 'Shoe2', 'Shoe3']; //this is an array
 
 //Your code here
 //Hint: productList.push(newObject) will add the object you just created to the array
-
+productList.push('Shoe1','Shoe2','Shoe3')
 console.log(productList[0]);
 
 /* Step 2
@@ -24,6 +40,14 @@ console.log(productList[0]);
 for(var i = 0; i < productList.length; i++){
 
     //Your code here
+if('Shoe1'.price > 50){
+  console.log("The number of products below $50 is " + comparePrice(50));}
+
+/*  console.log(productList[i].price)
+  var total = 0;
+for(var i = 0; i < productList.length; i++){
+  total += productList[i].price;
+}*/
 
     console.log();
 }
